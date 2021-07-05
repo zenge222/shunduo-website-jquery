@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>顺铎</title>
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="culture has-header">
+        <div class="head_container">
+            <div class="head_center">
+                <img src="./images/logo.png" alt="">
+                <ul class="menu_list"></ul>
+            </div>
+        </div>
+
+        <img class="culture_banner" src="./images/culture_banner.png">
+
+        <div class="title_froup title_froup2" style="margin-top:100px;">
+            <h3>集团文化</h3>
+            <div class="line"></div>
+            <p>GROUP CULTURE</p>
+        </div>
+
+        <P class="culture_intr">
+            未来，顺铎集团持续推进各大业务板块的协同发展，源源不断推出创新与优质的产品服务，与各领域具有相同信念的伙伴达成合作并携手共进，致力成为美好生活的缔造者，为打造国际化的集团公司而努力。</P>
+
+        <ul class="culture_list">
+            <li>
+                <img src="./images/culture_1.png">
+                <div class="list_intr">
+                    <div class="intr_title">
+                        <div></div>
+                        <h3>集团司训</h3>
+                    </div>
+                    <div class="line"></div>
+                    <p>以人为本</p>
+                </div>
+            </li>
+            <li>
+                <img src="./images/culture_2.png">
+                <div class="list_intr">
+                    <div class="intr_title">
+                        <div></div>
+                        <h3>集团理念</h3>
+                    </div>
+                    <div class="line"></div>
+                    <p>以“服务区块链作为核心技术”进行自主创新</p>
+                </div>
+            </li>
+            <li>
+                <img src="./images/culture_3.png">
+                <div class="list_intr">
+                    <div class="intr_title">
+                        <div></div>
+                        <h3>集团使命</h3>
+                    </div>
+                    <div class="line"></div>
+                    <p>引领各领域高速发展，共创幸福社会</p>
+                </div>
+            </li>
+            <li>
+                <img src="./images/culture_4.png">
+                <div class="list_intr">
+                    <div class="intr_title">
+                        <div></div>
+                        <h3>核心价值观</h3>
+                    </div>
+                    <div class="line"></div>
+                    <p>“诚信务实、团结协作”</p>
+                </div>
+            </li>
+        </ul>
+        <!-- footer -->
+        <div class="footer">
+            <div class="footer_container">
+                <img class="footer_logo" src="./images//footer_logo.png">
+                <ul class="footer_memu_list" style="margin-right: 82px;">
+                    关于顺铎
+                    <li><a href="./about_us.html">关于我们</a></li>
+                    <li><a href="./news_detail.html">新闻中心</a></li>
+                    <li><a href="./culture.html">集团文化</a></li>
+                    <li><a href="./contact_us.html">联系我们</a></li>
+                </ul>
+                <ul class="footer_memu_list">
+                    业务平台
+                    <li><a>产业投资</a></li>
+                    <li><a>大健康医药</a></li>
+                    <li><a>软件服务</a></li>
+                    <li><a>人才开发</a></li>
+                    <li><a>现代服务业</a></li>
+                </ul>
+                <div class="fotter_line"></div>
+                <ul class="footer_right_list">
+                    联系方式
+                    <li>地址： 浙江省宁波市鄞州区首南西路88号金融大厦B座308室</li>
+                    <li>邮箱： jiameirl@163.com</li>
+                    <li>电话： 0574-28886049</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    var menuList = ['首页', '关于我们', '业务布局', '新闻中心', '集团文化', '联系我们'];
+    var menuIndex = 0;
+
+    function getMenuList() {
+        let html = '';
+        menuList.forEach((val, index) => {
+            html +=
+                `
+                <li class="menu_item" onClick="linkTo(${index})">
+                    <a>${val}</a>
+                </li>
+            `
+        })
+        $('.menu_list').html(html);
+        $('.menu_item').eq(4).addClass('active');
+    };
+
+
+    function linkTo(index) {
+        switch (index) {
+            case 0:
+                window.location.href = "./index.html";
+                break;
+            case 1:
+                window.location.href = "./about_us.html";
+                break;
+            case 2:
+                window.location.href = "./business_layout.html";
+                break;
+            case 3:
+                window.location.href = "./news.html";
+                break;
+            case 4:
+                window.location.href = "./culture.html";
+                break;
+            case 5:
+                window.location.href = "./contact_us.html";
+                break;
+            default:
+                break;
+        }
+    };
+
+    $(function () {
+        getMenuList();
+    });
+</script>
